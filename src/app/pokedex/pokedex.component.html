@@ -1,0 +1,33 @@
+
+<div class="wrapper">
+    <app-navbar></app-navbar>
+    <div class="mycustomvirtualscroll" 
+        (scroll)="onScroll($event)" >
+
+        <div class="topcontainer">
+            <div class="banner-container">
+                <img src="assets/banner.svg" alt="Banner">
+            </div>
+
+            <div class="typescontainer">
+                <div class="types" *ngFor="let type of pokemonService.pokemonTypes" [ngClass]="'type-light-' + type" (click)="selectType(type)">
+                    {{type}}
+                </div>
+            </div>
+        </div>
+
+
+          <!--LOADER-->
+        <div class="loader-container" *ngIf="pokemonService.isLoading">
+            <div class="loader"></div>
+        </div>
+      
+        <app-pokemoncard 
+            *ngFor="let pokemon of pokemonList$ | async" 
+            [pokemon]="pokemon">
+        </app-pokemoncard>
+
+
+
+    </div>
+</div>

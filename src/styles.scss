@@ -1,1 +1,80 @@
 /* You can add global styles to this file, and also import other style files */
+$poke-type-colors: (
+  normal: #A8A77A,
+  fire: #EE8130,
+  water: #6390F0,
+  electric: #F7D02C,
+  grass: #7AC74C,
+  ice: #96D9D6,
+  fighting: #C22E28,
+  poison: #A33EA1,
+  ground: #E2BF65,
+  flying: #A98FF3,
+  psychic: #F95587,
+  bug: #A6B91A,
+  rock: #B6A136,
+  ghost: #735797,
+  dragon: #6F35FC,
+  dark: #705746,
+  steel: #B7B7CE,
+  fairy: #D685AD
+);
+
+$poke-type-colors-dark: ();
+
+@each $type, $color in $poke-type-colors {
+  $poke-type-colors-dark: map-merge(
+    $poke-type-colors-dark,
+    ($type: darken($color, 10%))
+  );
+}
+
+@mixin type-color($type) {
+  background-color: map-get($poke-type-colors, $type);
+  color: white;
+}
+
+@mixin type-color-dark($type) {
+  background-color: map-get($poke-type-colors-dark, $type);
+  color: white;
+}
+
+
+
+.type-light-normal { @include type-color(normal); }
+.type-light-fire { @include type-color(fire); }
+.type-light-water { @include type-color(water); }
+.type-light-electric { @include type-color(electric); }
+.type-light-grass { @include type-color(grass); }
+.type-light-ice { @include type-color(ice); }
+.type-light-fighting { @include type-color(fighting); }
+.type-light-poison { @include type-color(poison); }
+.type-light-ground { @include type-color(ground); }
+.type-light-flying { @include type-color(flying); }
+.type-light-psychic { @include type-color(psychic); }
+.type-light-bug { @include type-color(bug); }
+.type-light-rock { @include type-color(rock); }
+.type-light-ghost { @include type-color(ghost); }
+.type-light-dragon { @include type-color(dragon); }
+.type-light-dark { @include type-color(dark); }
+.type-light-steel { @include type-color(steel); }
+.type-light-fairy { @include type-color(fairy); }
+
+.type-dark-normal { @include type-color-dark(normal); }
+.type-dark-fire { @include type-color-dark(fire); }
+.type-dark-water { @include type-color-dark(water); }
+.type-dark-electric { @include type-color-dark(electric); }
+.type-dark-grass { @include type-color-dark(grass); }
+.type-dark-ice { @include type-color-dark(ice); }
+.type-dark-fighting { @include type-color-dark(fighting); }
+.type-dark-poison { @include type-color-dark(poison); }
+.type-dark-ground { @include type-color-dark(ground); }
+.type-dark-flying { @include type-color-dark(flying); }
+.type-dark-psychic { @include type-color-dark(psychic); }
+.type-dark-bug { @include type-color-dark(bug); }
+.type-dark-rock { @include type-color-dark(rock); }
+.type-dark-ghost { @include type-color-dark(ghost); }
+.type-dark-dragon { @include type-color-dark(dragon); }
+.type-dark-dark { @include type-color-dark(dark); }
+.type-dark-steel { @include type-color-dark(steel); }
+.type-dark-fairy { @include type-color-dark(fairy); }

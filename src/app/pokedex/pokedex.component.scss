@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+.wrapper{
+    //background: rgb(244,159,0);
+    //background: linear-gradient(90deg, rgba(244,159,0,1) 0%, rgba(246,199,5,1) 35%, rgba(255,222,0,1) 100%);
+    background-color: white;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    width:100vw;
+    height:100vh;
+    top:0;
+    left:0;
+    position:fixed;
+}
+
+.topcontainer{
+  width: 100%;
+}
+.banner-container{
+  width:100%;
+  
+  img{
+    width:100%;
+    height:100%;
+  }
+}
+
+.typescontainer{
+  margin-top:0px;
+  width:100vw;
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  padding:20px;
+
+  .types{
+    color:white;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    padding:10px;
+    cursor:pointer;
+    min-width:80px;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .banner-container {
+    height:300px;
+
+    img{
+        height:100%;
+    }
+
+  }
+  
+}
+
+
+/* Apply flexbox to force horizontal wrapping */
+.mycustomvirtualscroll {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start; 
+    gap: 20px;
+    overflow-y: auto;
+}
+
+.loader-container{
+    width:100%;
+    min-height:500px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 auto;
+
+    .loader {
+        border: 16px solid white; 
+        border-top: 16px solid #2256c7; 
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        animation: spin 1s linear infinite;
+      }
+      
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      } 
+
+
+}
